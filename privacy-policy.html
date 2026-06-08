@@ -1,0 +1,226 @@
+from pathlib import Path
+html = """<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — CodeCoach</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 760px;
+      margin: 48px auto;
+      padding: 0 24px;
+      line-height: 1.7;
+      color: #1f2328;
+      background: #ffffff;
+    }
+    h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.15rem; margin-top: 2rem; }
+    p, li { font-size: 0.96rem; }
+    code {
+      background: #f6f8fa;
+      padding: 0.1rem 0.25rem;
+      border-radius: 4px;
+    }
+    .meta { color: #57606a; }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.88rem;
+      color: #6e7682;
+      border-top: 1px solid #d8dee4;
+      padding-top: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p class="meta"><strong>CodeCoach</strong> — Chrome Extension<br>
+  Last updated: 2026-06-08</p>
+
+  <p>
+    CodeCoach is a Chrome extension that provides progressive AI hints, code analysis,
+    debugging guidance, local study notes, and weakness tracking on supported
+    coding-practice pages such as LeetCode and Programmers.
+  </p>
+
+  <h2>Summary</h2>
+  <ul>
+    <li>CodeCoach runs only on supported coding-practice pages and required API endpoints.</li>
+    <li>CodeCoach does not sell user data and does not use user data for advertising.</li>
+    <li>CodeCoach does not use third-party analytics SDKs or behavioral tracking.</li>
+    <li>Most study data is stored locally in your browser using Chrome extension storage.</li>
+    <li>AI requests are sent directly from your browser to OpenAI using the API key you provide.</li>
+    <li>Optional sign-in and cloud sync use Firebase / Google services.</li>
+  </ul>
+
+  <h2>Information stored locally in your browser</h2>
+  <p>
+    CodeCoach stores the following information locally using Chrome extension storage:
+  </p>
+  <ul>
+    <li>Your OpenAI API key, if you choose to save it in the extension settings</li>
+    <li>Extension settings, such as language, model, feature preferences, and display options</li>
+    <li>Local study notes, wrong-answer notes, and review metadata</li>
+    <li>Hint history, including timestamp, hint level, platform, programming language, and topic tags</li>
+    <li>Weakness-tracking metadata, such as topic category, signal type, and confidence score</li>
+    <li>Code snapshots or notes that you explicitly save</li>
+  </ul>
+
+  <p>
+    Locally stored data remains on your device unless you delete it, uninstall the extension,
+    clear Chrome extension storage, or enable optional cloud sync.
+  </p>
+
+  <h2>Information used for AI requests</h2>
+  <p>
+    When you request an AI feature, such as a hint, code analysis, debugging help,
+    note generation, or chat response, CodeCoach may send the following information
+    to OpenAI's API:
+  </p>
+  <ul>
+    <li>Your typed question or instruction</li>
+    <li>Your current editor code from the supported coding-practice page</li>
+    <li>Visible problem context from the supported coding-practice page, if included for that request or enabled in settings</li>
+    <li>Selected text, run results, or test output, when used for the requested feature</li>
+    <li>Basic request metadata, such as platform name, programming language, hint level, and selected model</li>
+  </ul>
+
+  <p>
+    AI requests are sent directly from your browser to OpenAI using your own API key.
+    The CodeCoach developer does not receive, proxy, store, or log the content of
+    your OpenAI requests.
+  </p>
+
+  <p>
+    OpenAI processes API requests according to OpenAI's applicable terms and privacy policy:
+    <a href="https://openai.com/policies/privacy-policy" rel="noopener noreferrer">https://openai.com/policies/privacy-policy</a>
+  </p>
+
+  <h2>Information not collected or stored by CodeCoach</h2>
+  <p>CodeCoach does not collect or store the following as developer-controlled data:</p>
+  <ul>
+    <li>Full browsing history</li>
+    <li>Page screenshots or screen recordings</li>
+    <li>Keystroke logging data</li>
+    <li>Passwords or payment information</li>
+    <li>Advertising identifiers</li>
+    <li>Data from unsupported websites</li>
+  </ul>
+
+  <p>
+    CodeCoach does not permanently store platform problem statements, examples,
+    constraints, editorial content, contest content, assessment content, or page HTML
+    in any developer-controlled database.
+  </p>
+
+  <h2>Supported pages and website access</h2>
+  <p>
+    CodeCoach is designed to work only on supported coding-practice pages, including
+    LeetCode and Programmers. It uses site access to detect the current problem,
+    read visible problem context, read your current editor code, and detect run or
+    test-result messages for user-facing study features.
+  </p>
+
+  <p>
+    CodeCoach does not access all websites. Host permissions are limited to supported
+    coding-practice platforms and required API endpoints, including OpenAI API and
+    Firebase / Google APIs for optional authentication and sync.
+  </p>
+
+  <h2>Optional Google sign-in and cloud sync</h2>
+  <p>
+    CodeCoach may offer optional Google sign-in through Firebase Authentication.
+    If you sign in, CodeCoach may process your Google account identifier, such as
+    your email address and basic profile information, for authentication.
+  </p>
+
+  <p>
+    If you enable optional cloud sync, CodeCoach may sync learning metadata to
+    Firebase Firestore under your user ID. Synced metadata may include session IDs,
+    hint events, learning signals, review metadata, and weakness-tracking categories.
+    Cloud sync is optional and can be disabled from the extension settings.
+  </p>
+
+  <p>
+    CodeCoach does not sync full platform problem statements, saved code snapshots,
+    or wrong-answer note bodies unless a future version explicitly discloses and asks
+    for that permission.
+  </p>
+
+  <h2>Third-party services</h2>
+  <ul>
+    <li><strong>OpenAI</strong>: Processes AI requests that you initiate using your own API key.</li>
+    <li><strong>Firebase / Google</strong>: Provides optional authentication and optional cloud sync.</li>
+  </ul>
+
+  <p>
+    CodeCoach's use and transfer of information received from Google APIs adheres
+    to the Chrome Web Store User Data Policy, including the Limited Use requirements.
+    CodeCoach uses Google user data only to provide and improve user-facing
+    authentication and optional sync features. CodeCoach does not use Google user
+    data for advertising, does not sell Google user data, and does not transfer
+    Google user data to third parties except as necessary to provide the extension's
+    disclosed functionality, comply with law, or protect against abuse.
+  </p>
+
+  <h2>Data deletion</h2>
+  <p>
+    You can delete locally stored extension data from the CodeCoach settings or
+    options page. You can also remove all local extension data by uninstalling
+    CodeCoach or clearing Chrome extension storage.
+  </p>
+
+  <p>
+    If you enabled cloud sync, you can disable sync and delete synced learning
+    metadata from the extension settings where supported. You may also contact
+    the developer using the contact information below for deletion assistance.
+  </p>
+
+  <h2>Data retention</h2>
+  <p>
+    Local extension data is kept until you delete it, uninstall the extension,
+    or clear Chrome extension storage. Optional Firebase learning metadata is kept
+    until you delete it, disable and clear cloud-synced learning data, or request
+    deletion. OpenAI API requests are retained according to OpenAI's applicable
+    policies for the API account and plan used with your key.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    CodeCoach is intended for coding-practice users and is not directed to children
+    under 13. CodeCoach does not knowingly collect personal information from children
+    under 13.
+  </p>
+
+  <h2>Independent tool disclaimer</h2>
+  <p>
+    CodeCoach is an independent learning tool. It is not affiliated with, endorsed by,
+    sponsored by, or officially connected to LeetCode, Programmers, or their operators.
+    Users are responsible for following the terms and rules of the coding-practice
+    platforms they use.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    This policy may be updated when CodeCoach changes its features, data handling,
+    or third-party services. The updated version will be posted on this page with
+    a new "Last updated" date.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    For privacy questions or data deletion requests, contact the developer at the
+    email address listed in the Chrome Web Store listing or open an issue on the
+    extension's public GitHub repository if available.
+  </p>
+
+  <footer>
+    <p>This privacy policy applies only to the CodeCoach Chrome extension.</p>
+  </footer>
+</body>
+</html>
+"""
+path = Path("/mnt/data/codecoach-privacy-policy.html")
+path.write_text(html, encoding="utf-8")
+path
